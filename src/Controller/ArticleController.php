@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Service\NewsService;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,22 +20,15 @@ class ArticleController extends AbstractController {
     }
 
     /**
-     * Display article recent
+     * Display article recent via M
      * @param int $max
      * @return Response
      */
     #[Route('/news', name:'recentArticles')]
-    public function recentArticles(string $api): Response {
-        return $this->render('article/recentArticles.html.twig', [
-            $api = `http://api.mediastack.com/v1/news
-                ?access_key = 6e6daf070179498ad3531d057e9946b0
-                & sources = fr,-de,-en
-                & date = 2022-02-10
-                & sort = published_asc popularity
-                & limit = 5`;
+    public function recentArticles(NewsService $newsService): Response {
 
-           'api' => $api
-        ]);
+        return $this->render('article/recentArticles.html.twig', ['apiResult' => $newsService]);
+
     }
 
     /**

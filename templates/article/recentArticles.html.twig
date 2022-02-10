@@ -6,16 +6,15 @@
     {# include menu #}
     {% include '_partials/menu.html.twig' %}
 
-    {# Here recent articles max 5 #}
-    {% if article === {{ max }} %}
+    {# Here recent articles max 10 #}
+    {% if article == {{ newService }} %}
         <div class="articleRecent">
-            {# % for article in articles %}
+            {% for article in articles %}
              <a href="{{ path('article_recentArticles', {slug: article.slug}) }}">
-                {{ article.getId() }}<br/>
                 {{ article.getName() }}<br/>
                 {{ article.getContent() }}<br/>
-
-            {% endfor %#}
+             </a>
+            {% endfor %}
         </div>
     {% endif %}
 
