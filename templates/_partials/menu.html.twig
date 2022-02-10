@@ -1,0 +1,10 @@
+{% extends '/_partials/base.html.twig' %}
+{% block menu %}
+    <div id="menu">
+        <ul>
+            <li><a href="{{ path('article_list') }}">Home</a></li>
+            <li><a href="{{ path('article_list') }}">Articles</a></li>
+            <li><a href="{{ path('article_recentArticles') }}">A la une</a></li>
+        </ul>
+    </div>
+{% endblock %}
