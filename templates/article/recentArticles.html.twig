@@ -7,11 +7,17 @@
     {% include '_partials/menu.html.twig' %}
 
     {# Here recent articles max 5 #}
-    {# % for article in articles %}
-        <a href="{{ path('article_recentArticles', {slug: article.slug}) }}">
-            {{ article.title }}
-        </a>
-    {% endfor %}#}
+    {% if article === {{ max }} %}
+        <div class="articleRecent">
+            {# % for article in articles %}
+             <a href="{{ path('article_recentArticles', {slug: article.slug}) }}">
+                {{ article.getId() }}<br/>
+                {{ article.getName() }}<br/>
+                {{ article.getContent }}<br/>
+
+            {% endfor %#}
+        </div>
+    {% endif %}
 
 {% endblock %}
 

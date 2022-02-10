@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+    </head>
+    <body>
+        {% block body %}
+            {% include 'templates/_partials/menu.html.twig' %}
+        {% endblock %}
+    </body>
+</html>
