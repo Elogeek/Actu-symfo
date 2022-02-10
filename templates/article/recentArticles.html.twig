@@ -13,7 +13,7 @@
              <a href="{{ path('article_recentArticles', {slug: article.slug}) }}">
                 {{ article.getId() }}<br/>
                 {{ article.getName() }}<br/>
-                {{ article.getContent }}<br/>
+                {{ article.getContent() }}<br/>
 
             {% endfor %#}
         </div>

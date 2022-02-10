@@ -7,6 +7,16 @@
     {# include menu #}
     {% include '_partials/menu.html.twig' %}
 
+    {% if articles %}
+        <div class="article">
+            {# % for article in articles %}
+                {{ article.getName() }}<br/>
+                {{ article.getContent() }}<br/>
+
+            {% endfor %#}
+        </div>
+    {% endif %}
+
     {# articles recents #}
     <div class="articles-recent">
         <div>

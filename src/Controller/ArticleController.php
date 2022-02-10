@@ -24,9 +24,16 @@ class ArticleController extends AbstractController {
      * @return Response
      */
     #[Route('/news', name:'recentArticles')]
-    public function recentArticles(int $max = 5): Response {
+    public function recentArticles(string $api): Response {
         return $this->render('article/recentArticles.html.twig', [
-            'max' => $max
+            $api = `http://api.mediastack.com/v1/news
+                ?access_key = 6e6daf070179498ad3531d057e9946b0
+                & sources = fr,-de,-en
+                & date = 2022-02-10
+                & sort = published_asc popularity
+                & limit = 5`;
+
+           'api' => $api
         ]);
     }
 
