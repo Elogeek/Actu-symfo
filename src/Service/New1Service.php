@@ -2,24 +2,27 @@
 namespace App\Service;
 
 /*
-* First api new
+* First api new (mediastack)
 */
-class NewsService {
+class New1Service {
 
-    public function getLastArticles() {
+    public function getData(): string {
+
         $queryString = http_build_query([
             // acces-key in the Api
             'access_key' => '6e6daf070179498ad3531d057e9946b0',
-            // Categorie === general
+            // Categorie
             'categories' => '-general',
             // Order by more popular
             'sort' => 'popularity',
-            // Langues (fr = french)
-            'sources' => 'fr',
+            // Langues
+            'languages' => 'fr,-en',
+            'countries' => "us, fr",
             // Order by date de publication (aujourd'hui)
             'date' => "2022-02-10",
-            // Limit 10 in the page
-            'limit' => 10,
+            // Limit 5 in the page
+            'limit' => 5,
+            'offset' => 5,
         ]);
 
         $ch = curl_init(sprintf('%s?%s', 'https://api.mediastack.com/v1/news', $queryString));
@@ -37,6 +40,8 @@ class NewsService {
         }
 
         print_r($apiResult);
+
+       return $apiResult;
 
     }
 

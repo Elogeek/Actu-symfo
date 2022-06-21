@@ -7,7 +7,7 @@
     {% include '_partials/menu.html.twig' %}
 
     {# Here recent articles max 10 #}
-    {% if article == {{ newService }} %}
+    {% if article == {{ new1Service }} %}
         <div class="articleRecent">
             {% for article in articles %}
              <a href="{{ path('article_recentArticles', {slug: article.slug}) }}">
