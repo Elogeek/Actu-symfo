@@ -6,36 +6,21 @@ namespace App\Service;
 */
 class New1Service {
 
-    /** Search articles(5) about Japan */
-    public function getData(): string {
+    /** Search articles(limit 10) about Japan */
+    public function getData(): array {
 
-        $queryString = http_build_query([
-            // acces-key in the Api
-            'access_key' => '6e6daf070179498ad3531d057e9946b0',
-            // Countries
-            'countries' => 'jp',
-            // Limit 5 in the page
-            'limit' => 5,
-            'offset' => 5,
-        ]);
-
-        $ch = curl_init(sprintf('%s?%s', 'https://api.mediastack.com/v1/news', $queryString));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-        $json = curl_exec($ch);
-
-        curl_close($ch);
-
-        try {
-            $apiResult = json_decode($json, true, 512, JSON_THROW_ON_ERROR);
-        }
-        catch (\JsonException $e) {
-            dd('e');
+        $api = json_decode(file_get_contents("http://api.mediastack.com/v1/news?access_key=6e6daf070179498ad3531d057e9946b0&countries=jp&limit=10&offset=10"), true);
+        foreach ($api->value as $article) {
+            $arrayJp[] = [
+                "author" => $article->provider->name,
+                "title" => $article->title,
+                "description" => $article->description,
+                "image" => $article->image->url,
+                "content" => $article->body
+            ];
         }
 
-        print_r($apiResult);
-
-       return $apiResult;
+        return $arrayJp;
 
     }
 

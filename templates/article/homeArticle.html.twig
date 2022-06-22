@@ -7,39 +7,15 @@
     {# include menu #}
     {% include '_partials/menu.html.twig' %}
 
-    {% if articles %}
-        <div class="article">
-            {# % for article in articles %}
-                {{ article.getName() }}<br/>
-                {{ article.getContent() }}<br/>
-
-            {% endfor %#}
-        </div>
-    {% endif %}
-
-    {# articles recents #}
-    <div class="articles-recent">
-        <div>
-            <h3>Super article</h3>
+    {% for article in articles %}
+        <div class='container_articles'>
+            <h2>{{article["title"]}}</h2>
             <div>
-                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam commodi cumque dignissimos distinctio
-                    doloribus eveniet explicabo omnis, optio possimus quas quis rem rerum similique sint, soluta? Cum
-                    debitis eligendi enim.
-                </div>
+                <img src='{{article["image"] }}' alt='Image'>
             </div>
+            <p>{{article["description"]}}</p>
+            <a href='./article/{{ loop.index - 1 }}'>Lire l'article</a>
         </div>
-    </div>
-
-    <div class="articles-recent">
-        <div>
-            <h3>Super article</h3>
-            <div>
-                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam commodi cumque dignissimos distinctio
-                    doloribus eveniet explicabo omnis, optio possimus quas quis rem rerum similique sint, soluta? Cum
-                    debitis eligendi enim.
-                </div>
-            </div>
-        </div>
-    </div>
+    {% endfor %}
 
 {% endblock %}

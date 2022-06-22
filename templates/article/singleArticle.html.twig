@@ -5,16 +5,14 @@
     {# include menu #}
     {% include '_partials/menu.html.twig' %}
 
-    <div class="articles-recent">
+    <div class='article'>
+        <h2>{{article["title"]}}</h2>
         <div>
-            <h3>Super article</h3>
-            <div>
-                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam commodi cumque dignissimos distinctio
-                    doloribus eveniet explicabo omnis, optio possimus quas quis rem rerum similique sint, soluta? Cum
-                    debitis eligendi enim.
-                </div>
-            </div>
+            <img src='{{article["image"] }}' alt='Image'>
         </div>
+        <p>{{article["content"]|nl2br}}</p>
+        <p><b>{{article["author"]|upper}}</b></p>
+        <a href='/'>Retour</a>
     </div>
 {% endblock %}
 
