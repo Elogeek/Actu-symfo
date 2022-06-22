@@ -20,7 +20,7 @@ class ArticleController extends AbstractController {
      */
     #[Route('/', name: 'list', methods: ['GET'])]
     public function list(NewsAggregatorsService $newsAggregatorsService): Response {
-        $allNews = $newsAggregatorsService->AllNews();
+        $allNews = $newsAggregatorsService->getAllNews();
         return $this->render('article/homeArticle.html.twig', [
             'news' => $allNews,
         ]);

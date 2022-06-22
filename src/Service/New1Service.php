@@ -6,20 +6,14 @@ namespace App\Service;
 */
 class New1Service {
 
+    /** Search articles(5) about Japan */
     public function getData(): string {
 
         $queryString = http_build_query([
             // acces-key in the Api
             'access_key' => '6e6daf070179498ad3531d057e9946b0',
-            // Categorie
-            'categories' => '-general',
-            // Order by more popular
-            'sort' => 'popularity',
-            // Langues
-            'languages' => 'fr,-en',
-            'countries' => "us, fr",
-            // Order by date de publication (aujourd'hui)
-            'date' => "2022-02-10",
+            // Countries
+            'countries' => 'jp',
             // Limit 5 in the page
             'limit' => 5,
             'offset' => 5,
