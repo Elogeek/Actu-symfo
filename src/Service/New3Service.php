@@ -11,12 +11,12 @@ class New3Service
      * @return array
      */
     function getData(): array {
-        $json = "https://newsdata.io/api/1/news?apikey=pub_85513801750031af99934b968b9861bb6f2f&category=food&language=fr,en";
-        $data = file_get_contents($json);
-        $foodData = json_decode($data);
+        $api = "https://newsdata.io/api/1/news?apikey=pub_85513801750031af99934b968b9861bb6f2f&category=food&language=fr,en";
+        $data = file_get_contents($api);
+        $dataApi = json_decode($data);
         $array = [];
 
-        foreach ($foodData->value as $article){
+        foreach ($dataApi->value as $article){
             $array[] = [
                 "title" => $article->title,
                 "author"=>$article->author,
