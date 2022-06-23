@@ -5,13 +5,20 @@
     {# include menu #}
     {% include '_partials/menu.html.twig' %}
 
-    <div class='article'>
-        <h2>{{article["title"]}}</h2>
-        <div>
-            <img src='{{article["image"] }}' alt='Image'>
-        </div>
-        <p>{{article["content"]|nl2br}}</p>
-        <p><b>{{article["author"]|upper}}</b></p>
+        {#  food news with Newsdata #}
+        {% for article in new3service %}
+            <div class='article'>
+                <h2>{{article["title"]}}</h2>
+                <div>
+                    <img alt="{{ article['title'] }}" src="{{ article['urlToImage'] }}">
+                </div>
+                <div>
+                    <p>{{article["description"]}}</p>
+                </div>
+                <p>{{ article['publishedAt'] }} by {{ article['author'] }}</p>
+                <a href="{{ article['url'] }}">See more</a>
+            </div>
+        {% endfor %}
         <a href='/'>Retour</a>
     </div>
 {% endblock %}

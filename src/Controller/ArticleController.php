@@ -17,6 +17,7 @@ class ArticleController extends AbstractController {
      */
     #[Route('/', name: 'article_list', methods: ['GET'])]
     public function list(NewsAggregatorsService $newsAggregatorsService): Response {
+
         $allNews = $newsAggregatorsService->getAllNews();
         return $this->render('article/homeArticle.html.twig', [
             'news' => $allNews,
@@ -29,7 +30,11 @@ class ArticleController extends AbstractController {
     #[Route('/new/{id<\d+>}', name:'article_single', methods: ['GET'])]
     public function show(int $api, int $id, New3Service $new3Service): Response
     {
-        return $this->render('/article/singleArticle.html.twig');
+
+        return $this->render('/article/singleArticle.html.twig', [
+            "news3Services" => $new3Service
+        ]);
+
     }
 
 }

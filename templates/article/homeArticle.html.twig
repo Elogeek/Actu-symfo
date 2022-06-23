@@ -7,14 +7,48 @@
     {# include menu #}
     {% include '_partials/menu.html.twig' %}
 
-    {% for article in articles %}
+    {# news with Mediastack #}
+    {% for article in new1service %}
         <div class='container_articles'>
             <h2>{{article["title"]}}</h2>
             <div>
-                <img src='{{article["image"] }}' alt='Image'>
+                <img alt="{{ article['title'] }}" src="{{ article['urlToImage'] }}">
             </div>
-            <p>{{article["description"]}}</p>
-            <a href='./article/{{ loop.index - 1 }}'>Lire l'article</a>
+            <div>
+                <p>{{article["description"]}}</p>
+            </div>
+            <p>{{ article['publishedAt'] }} by {{ article['author'] }}</p>
+            <a href="{{ article['url'] }}">See more</a>
+        </div>
+    {% endfor %}
+
+    {# news with NewApi #}
+    {% for article in new2service %}
+        <div class='container_articles'>
+            <h2>{{article["title"]}}</h2>
+            <div>
+                <img alt="{{ article['title'] }}" src="{{ article['urlToImage'] }}">
+            </div>
+            <div>
+                <p>{{article["description"]}}</p>
+            </div>
+            <p>{{ article['publishedAt'] }} by {{ article['author'] }}</p>
+            <a href="{{ article['url'] }}">See more</a>
+        </div>
+    {% endfor %}
+
+    {# news with Newsdata #}
+    {% for article in new3service %}
+        <div class='container_articles'>
+            <h2>{{article["title"]}}</h2>
+            <div>
+                <img alt="{{ article['title'] }}" src="{{ article['urlToImage'] }}">
+            </div>
+            <div>
+                <p>{{article["description"]}}</p>
+            </div>
+            <p>{{ article['publishedAt'] }} by {{ article['author'] }}</p>
+            <a href="{{ article['url'] }}">See more</a>
         </div>
     {% endfor %}
 
