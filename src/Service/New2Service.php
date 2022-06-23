@@ -14,7 +14,7 @@ class New2Service
         $dataApi = json_decode($data);
         $array = [];
 
-        foreach ($dataApi->news as $article) {
+        foreach ($dataApi->value as $article) {
             $array[] = [
                 "title" => $article->title,
                 "author"=>$article->author,

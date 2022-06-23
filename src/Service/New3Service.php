@@ -16,7 +16,7 @@ class New3Service
         $foodData = json_decode($data);
         $array = [];
 
-        foreach ($foodData->news as $article){
+        foreach ($foodData->value as $article){
             $array[] = [
                 "title" => $article->title,
                 "author"=>$article->author,

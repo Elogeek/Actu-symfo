@@ -1,3 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Megrim&family=Murecho:wght@100;200;500&family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Megrim&family=Murecho:wght@100;200;300;400;500&family=Open+Sans:wght@300&display=swap');
+
+/** General rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+HTML {
+    font-size: 62.5%;
+}
+
 body {
-    background-color: lightgray;
+    font-size: 3rem;
+    background-color: white;
+    color: #494949FF;
+}
+
+/** Rules logo of the website */
+#divLogo {
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+#divLogo img {
+    max-width: 12%;
+    margin: 2rem;
+}
+
+.footer {
+    background: rgb(226,0,0);
+    background: linear-gradient(90deg, rgba(226,0,0,1) 6%, rgba(222,111,112,1) 55%, rgba(238,162,156,0.94859950816264) 100%);
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 4rem;
+    padding: 5rem 0;
 }
