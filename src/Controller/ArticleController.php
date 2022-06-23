@@ -28,9 +28,8 @@ class ArticleController extends AbstractController {
      * Return a single article (category food)
      */
     #[Route('/new/{id<\d+>}', name:'article_single', methods: ['GET'])]
-    public function show(int $api, int $id, New3Service $new3Service): Response
+    public function show(int $id, New3Service $new3Service): Response
     {
-
         return $this->render('/article/singleArticle.html.twig', [
             "news3Services" => $new3Service
         ]);
