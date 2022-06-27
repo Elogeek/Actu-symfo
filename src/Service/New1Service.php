@@ -14,15 +14,17 @@ class New1Service {
         $dataApi = json_decode($data);
         $array = [];
 
-        foreach ($dataApi->value as $article) {
-            $array[] = [
-                "title" => $article->title,
-                "author"=>$article->author,
-                "url"=>$article->url,
-                "image"=>$article->image,
-                "description"=>$article->description,
-                "published"=>$article->published,
-            ];
+        if (!empty($dataApi->value)) {
+            foreach ($dataApi->value as $article) {
+                $array[] = [
+                    "title" => $article->title,
+                    "author"=>$article->author,
+                    "url"=>$article->url,
+                    "image"=>$article->image,
+                    "description"=>$article->description,
+                    "published"=>$article->published,
+                ];
+            }
         }
 
         return $array;

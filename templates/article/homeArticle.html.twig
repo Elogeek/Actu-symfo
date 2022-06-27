@@ -18,11 +18,11 @@
                 <p>{{article["description"]}}</p>
             </div>
             <p>{{ article['publishedAt'] }} by {{ article['author'] }}</p>
-            <a href="{{ article['url'] }}">See more</a>
+            <a href="{{ article['url'] }}">Lire plus <box-icon name='right-arrow-alt'></box-icon></a>
         </div>
     {% endfor %}
 
-    {# news with NewApi #}
+    {# news with NewApi
     {% for article in new2service %}
         <div class='container_articles'>
             <h2>{{article["title"]}}</h2>
@@ -35,9 +35,9 @@
             <p>{{ article['publishedAt'] }} by {{ article['author'] }}</p>
             <a href="{{ article['url'] }}">See more</a>
         </div>
-    {% endfor %}
+    {% endfor %} #}
 
-    {# news with Newsdata #}
+    {# news with Newsdata
     {% for article in new3service %}
         <div class='container_articles'>
             <h2>{{article["title"]}}</h2>
@@ -50,6 +50,6 @@
             <p>{{ article['publishedAt'] }} by {{ article['author'] }}</p>
             <a href="{{ article['url'] }}">See more</a>
         </div>
-    {% endfor %}
+    {% endfor %} #}
 
 {% endblock %}
