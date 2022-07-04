@@ -5,10 +5,10 @@
 {% block body %}
 
     {# include menu #}
-    {% include '_partials/menu.html.twig' %}
+    {# % include '_partials/menu.html.twig' %}
 
     {# news with Mediastack #}
-    {% for article in new1service %}
+    {% for article in news %}
         <div class='container_articles'>
             <h2>{{article["title"]}}</h2>
             <div>
@@ -17,8 +17,8 @@
             <div>
                 <p>{{article["description"]}}</p>
             </div>
-            <p>{{ article['publishedAt'] }} by {{ article['author'] }}</p>
-            <a href="{{ article['url'] }}">Lire plus <box-icon name='right-arrow-alt'></box-icon></a>
+            <p>{{ article['published_at'] }} by {{ article['author'] }}</p>
+            <a href="{{ article['url'] }}">Lire plus <box-icon name='right-arrow-alt'></box-icon></a> }
         </div>
     {% endfor %}
 

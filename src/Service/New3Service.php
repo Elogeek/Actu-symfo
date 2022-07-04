@@ -9,7 +9,7 @@ class New3Service
     /**
      * Search all articles about food in En /Fr
      * @return array
-     */
+
     function getData(): array {
         $api = "https://newsdata.io/api/1/news?apikey=pub_85513801750031af99934b968b9861bb6f2f&category=food&language=fr,en";
         $data = file_get_contents($api);
@@ -28,6 +28,6 @@ class New3Service
         }
 
         return $array;
-    }
+    }  */
 
 }
