@@ -20,7 +20,7 @@ class ArticleController extends AbstractController {
 
         $allNews = $newsAggregatorsService->getAllNews();
         return $this->render('article/homeArticle.html.twig', [
-            'news' => $allNews,
+            'allNews' => $allNews,
         ]);
     }
 

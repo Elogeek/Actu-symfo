@@ -4,11 +4,8 @@
 
 {% block body %}
 
-    {# include menu #}
-    {# % include '_partials/menu.html.twig' %}
-
     {# news with Mediastack #}
-    {% for article in news %}
+    {% for article in allNews %}
         <div class='container_articles'>
             <h2>{{article["title"]}}</h2>
             <div>
