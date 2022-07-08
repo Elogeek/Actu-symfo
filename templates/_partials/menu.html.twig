@@ -1,16 +1,14 @@
 {% extends '/_partials/base.html.twig' %}
 
-{% block menu %}
+ {% block menu %}
+     <div id="divLogo">
+         <img src="{{ asset('build/img/logo.png') }}" alt="logo_site">
+     </div>
 
-    <div id="divLogo">
-        <img src="{{ asset('build/img/logo.png') }}" alt="logo_site">
-    </div>
-
-    <div id="menu">
-        <ul>
-            <li><a href="{{ path('article_list') }}">Home</a></li>
-            <li><a href="{{ path('article_single') }}"></a></li>
-        </ul>
-    </div>
-
-{% endblock %}
+     <div id="menu">
+         <ul>
+             <li><a href="{{ path('articles_list') }}">Home</a></li>
+             <li><a href="{{ path('article') }}"></a></li>
+         </ul>
+     </div>
+ {% endblock %}

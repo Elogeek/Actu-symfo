@@ -5,14 +5,14 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
     </head>
     <body>
-        {#
         {% block body %}
-            {% include 'templates/_partials/menu.html.twig' %}
+            {# Import menu and footer #}
+            {% block menu %}
+                {% include 'templates/_partials/menu.html.twig' %}
+            {% endblock %}
+            {% block footer %}
+                {% include 'templates/_partials/footer.html.twig' %}
+            {% endblock %}
         {% endblock %}
-
-        {% block footer %}
-            {% include 'templates/_partials/footer.html.twig' %}
-        {% endblock %} #}
-
     </body>
 </html>
