@@ -12,7 +12,7 @@ class NewsAggregatorsService {
         //$new2 = (new New2Service())->getData();
         //$new3 = (new New3Service())->getData();
 
-       return array_merge($new1//$new2, //$new3);
+       return array_merge($new1);//$new2, //$new3);
     }
 
 }
